@@ -43,8 +43,12 @@ def check_time(expected_time, current_time, tolerance):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--server", default="time.cloudflare.com", help="NTP server")
-    parser.add_argument("--interval", default=30, help="Check interval in seconds")
-    parser.add_argument("--tolerance", default=10, help="Tolerance in seconds")
+    parser.add_argument(
+        "--interval", default=30, help="Check interval in seconds", type=int
+    )
+    parser.add_argument(
+        "--tolerance", default=10, help="Tolerance in seconds", type=int
+    )
     parser.add_argument("--once", action="store_true", help="Run once and exit")
     args = parser.parse_args()
 
